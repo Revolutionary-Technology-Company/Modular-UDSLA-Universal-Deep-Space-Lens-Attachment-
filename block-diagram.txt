@@ -1,0 +1,58 @@
+[ OPTICAL & PRESSURE ASSEMBLY (The "Tube") ]
+      +-------------------------------------------------------+
+      |  Kevlar/Vectran Shield (Outer Layer)                  |
+      |  +-------------------------------------------------+  |
+      |  |  Titanium Pressure Vessel (1.5 - 2.0 Atm)       |  |
+      |  |                                                 |  |
+      |  |   (A) Primary Lens        (B) Aerial Image      |  |
+      |  |      (Collector)            (Focal Point)       |  |
+      |  |     [|||||||||||] ===========>  X  <=========== |  |
+      |  |           |                     |               |  |
+      |  |           |           (C) Microscope Lens       |  |
+      |  |           |              (Magnifier)            |  |
+      |  |           |               [=======]             |  |
+      |  |           |                   ^                 |  |
+      |  |           |                   | (Moveable)      |  |
+      |  +-----------+-------------------+-----------------+  |
+      |              |                   |                    |
+      +--------------+-------------------+--------------------+
+                     |                   |
+            [ PHYSICAL INPUTS ]          |
+                     |                   |
+        +------------+                   v
+        |                           [ MECHANICAL ]
+  [ PRESSURE SYSTEM ]               +--------+
+  |                                 |        |
+  |  Reserve Tank (N2)              | Focus  |
+  |    (3000 PSI)                   | Motor  |
+  |        |                        | (Step) |
+  |        v                        |        |
+  |   [ Solenoid ] <--------------+ +---+----+
+  |     Valve                     |     ^
+  |        |                      |     |
+  |        v                      |     |
+  +-----> [ PSI Sensor ]          |     |
+                                  |     |
+                                  |     |
+       [ CONTROL SYSTEM (External / Shielded) ]
+      +-----------------------------------------+
+      |                                         |
+      |   [ Microcontroller Bridge (PCB) ]      |
+      |      (Teensy 4.1 / ESP32)               |
+      |                ^                        |
+      |                | USB-C                  |
+      |                v                        |
+      |   [ SAMSUNG GALAXY S25 (Brain) ]        |
+      |   - App: "NavyScope Control"            |
+      |   - Logic: PID Loop for Pressure        |
+      |   - UI: Touch Focus / Diagnostics       |
+      |                                         |
+      +-----------------------------------------+
+                     |
+                     | USB / Wi-Fi (Image Transfer)
+                     v
+             [ NASA HARDWARE ]
+             +---------------+
+             | Canon EOS R5  |
+             | (Sensor)      |
+             +---------------+
